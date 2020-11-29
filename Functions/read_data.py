@@ -11,16 +11,20 @@ data_in_array.shape
 
 def howmanydays(data):
     date = data[['started_at', 'ended_at']].values
+    # print(date[0:5, :])
     daylist = []
     day = 0
     for i in range(date.shape[0]):
         daylist.append(date[i, 0][0:10])
 
+    # print(daylist)
+
     days = list(set(daylist))
+    # print(days)
     return len(days)
 
 num_of_days = howmanydays(data)
-
+num_of_days
 def howmanystations(data):
     stations = data[['start_station_name', 'end_station_name']].values
     stationlist = []
